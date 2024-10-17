@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:random_color_generator/services/dependency_injection/dependency_injection.dart';
-import 'package:random_color_generator/services/environments/environments.dart';
+import 'package:random_color_generator/services/environments/environment.dart';
 import 'package:random_color_generator/ui/widgets/root_app_widget.dart';
 
 import '../../../utils/mocks.dart';
@@ -14,7 +14,10 @@ void main() {
       final storage = MockStorage();
       when(
         () => storage.write(any(), any<dynamic>()),
-      ).thenAnswer((_) async {});
+      ).thenAnswer(
+        // ignore: no_empty_block
+        (_) async {},
+      );
       HydratedBloc.storage = storage;
     },
   );

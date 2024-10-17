@@ -5,7 +5,7 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart' hide Environment;
 import 'package:random_color_generator/services/dependency_injection/src/dependency_injection.config.dart';
 import 'package:random_color_generator/services/dependency_injection/src/dependency_injection_instance_names.dart';
-import 'package:random_color_generator/services/environments/environments.dart';
+import 'package:random_color_generator/services/environments/environment.dart';
 
 // Typedefs for injectable's annotations to hide the package from
 // the application code, so that it can be replaced with another DI package

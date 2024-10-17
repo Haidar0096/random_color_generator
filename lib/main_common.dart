@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:random_color_generator/services/dependency_injection/dependency_injection.dart';
-import 'package:random_color_generator/services/environments/environments.dart';
+import 'package:random_color_generator/services/environments/environment.dart';
 import 'package:random_color_generator/ui/widgets/root_app_widget.dart';
 
 /// The common main entry point for the application.

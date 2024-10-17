@@ -1,53 +1,53 @@
 import 'package:flutter/material.dart';
 
 /// The base class for all environments.
-// ignore: prefer_match_file_name
 sealed class Environment {
   /// The name of the environment.
   final String name;
 
   /// The initial background color of the app.
-  Color get initialBackgroundColor;
+  final Color initialBackgroundColor;
 
   /// The seed for the random color generator.
-  int get seed;
+  final int seed;
 
   /// Creates an environment with the given name.
-  const Environment(this.name);
+  const Environment({
+    required this.name,
+    required this.initialBackgroundColor,
+    required this.seed,
+  });
 }
 
 /// The development environment.
 final class DevelopmentEnvironment extends Environment {
-  @override
-  Color get initialBackgroundColor => Colors.red;
-
-  @override
-  int get seed => 42;
-
   /// Creates the development environment.
-  const DevelopmentEnvironment() : super('development');
+  const DevelopmentEnvironment()
+      : super(
+          name: 'development',
+          initialBackgroundColor: Colors.red,
+          seed: 42,
+        );
 }
 
 /// The staging environment.
 final class StagingEnvironment extends Environment {
-  @override
-  Color get initialBackgroundColor => Colors.green;
-
-  @override
-  int get seed => 43;
-
   /// Creates the staging environment.
-  const StagingEnvironment() : super('staging');
+  const StagingEnvironment()
+      : super(
+          name: 'staging',
+          initialBackgroundColor: Colors.green,
+          seed: 43,
+        );
 }
 
 /// The production environment.
 final class ProductionEnvironment extends Environment {
-  @override
-  Color get initialBackgroundColor => Colors.blue;
-
-  @override
-  int get seed => 44;
-
   /// Creates the production environment.
-  const ProductionEnvironment() : super('production');
+  const ProductionEnvironment()
+      : super(
+          name: 'production',
+          initialBackgroundColor: Colors.blue,
+          seed: 44,
+        );
 }
