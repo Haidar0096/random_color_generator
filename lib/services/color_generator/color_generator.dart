@@ -1,7 +1,10 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:random_color_generator/services/dependency_injection/dependency_injection.dart';
+
 /// Generator for random colors.
+@Service()
 class ColorGenerator {
   final Random _random;
 
@@ -14,7 +17,10 @@ class ColorGenerator {
   /// Creates a [ColorGenerator] with the provided seed.
   ///
   /// The [seed] parameter allows for reproducible color generation.
-  ColorGenerator({int seed = defaultSeed}) : _random = Random(seed);
+  ColorGenerator({
+    @InjectedParam(DependencyInjectionInstanceNames.seed)
+    int seed = defaultSeed,
+  }) : _random = Random(seed);
 
   /// Generates a random color based on the provided seed.
   ///

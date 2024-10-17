@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "helloThere": "Hello there",
+  "@helloThere": {
+    "description": "Text shown to greet awesome people."
+  }
+}
